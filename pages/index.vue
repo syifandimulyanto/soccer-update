@@ -1,34 +1,82 @@
 <template>
-  <section class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        soccer-update
-      </h1>
-      <h2 class="subtitle">
-        Getting update soccer news and score
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green"
-          >Documentation</a
-        >
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-          >GitHub</a
-        >
+  <div>
+    <section class="hero is-white has-text-centered">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns is-centered">
+            <div class="column">
+              <h1 class="title is-spaced is-size-1-desktop is-size-2-tablet is-size-3-mobile">Designer, Front-end Developer &amp; Mentor</h1>
+              <h2 class="subtitle is-size-4-desktop">I design and code beautifully simple things, and I love what I do.</h2><img
+                class="avatar"
+                src="https://bulma.io/images/bulma-logo.png"
+              >
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+    <section class="section is-medium is-primary has-text-centered is-long">
+      <div class="container">
+        <div class="columns is-multiline is-mobile">
+          <div
+            v-for="user in users"
+            :key="user.id"
+            class="column is-12-mobile is-half-tablet is-one-third-desktop"
+          >
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img
+                    src="http://lorempixel.com/400/200/"
+                    alt="Placeholder image"
+                  >
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-left">
+                    <figure class="image is-48x48">
+                      <img
+                        src="https://bulma.io/images/placeholders/96x96.png"
+                        alt="Placeholder image"
+                      >
+                    </figure>
+                  </div>
+                  <div class="media-content">
+                    <p class="title is-4">{{ user.name }}</p>
+                    <p class="subtitle is-6">@johnsmith</p>
+                  </div>
+                </div>
+
+                <div class="content">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                  <a href="#">#css</a> <a href="#">#responsive</a>
+                  <br>
+                  <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </template>
 
 <script>
 import Logo from '~/components/Logo.vue'
+import axios from 'axios'
 
 export default {
   components: {
     Logo
+  },
+  async asyncData() {
+    const { data } = await axios.get(
+      'https://jsonplaceholder.typicode.com/users'
+    )
+    return { users: data }
   }
 }
 </script>
