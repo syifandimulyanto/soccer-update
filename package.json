@@ -19,7 +19,10 @@
     "@nuxtjs/pwa": "^2.6.0",
     "cross-env": "^5.2.0",
     "nuxt": "^2.4.0",
-    "vue-youtube-embed": "^2.2.1"
+    "nuxt-cli": "0.0.1",
+    "vue-youtube-embed": "^2.2.1",
+    "@nuxtjs/dotenv": "^1.1.1",
+    "vuex-persistedstate": "^1.4.1"
   },
   "devDependencies": {
     "nodemon": "^1.18.9",
