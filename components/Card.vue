@@ -23,13 +23,6 @@
           <p class="subtitle is-6">{{ timeline.league.name }}</p>
         </div>
       </div>
-      <div class="content">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-        <a href="#">#css</a> <a href="#">#responsive</a>
-        <br>
-        <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-      </div>
     </div>
   </div>
 </template>
@@ -55,9 +48,11 @@ export default {
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   display: block;
   font-weight: 300;
-  font-size: 100px;
+  font-size: 12px;
   color: #35495e;
   letter-spacing: 1px;
-  font-size: 1rem;
+}
+.media-content {
+  min-height: 75px;
 }
 </style>

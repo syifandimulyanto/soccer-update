@@ -1,29 +1,8 @@
 <template>
   <div>
-    <section class="hero is-white has-text-centered">
-      <div class="hero-body">
-        <div class="container">
-          <div class="columns is-centered">
-            <div class="column">
-              <h1 class="title is-spaced is-size-1-desktop is-size-2-tablet is-size-3-mobile">
-                Designer, Front-end Developer &amp; Mentor
-              </h1>
-              <h2 class="subtitle is-size-4-desktop">
-                I design and code beautifully simple things, and I love what I
-                do.
-              </h2>
-              <img
-                class="avatar"
-                src="https://bulma.io/images/bulma-logo.png"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
     <section class="section is-medium is-primary has-text-centered is-long">
       <div class="container">
-        <div class="columns is-multiline is-mobile">
+        <div class="columns is-multiline is-mobile card-content">
           <div
             v-for="(timeline, index) in timelines"
             :key="index"
@@ -87,5 +66,9 @@ export default {
 
 .links {
   padding-top: 15px;
+}
+
+.card-content {
+  width: 100%;
 }
 </style>
